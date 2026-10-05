@@ -1,0 +1,6 @@
+{
+  "name": "VAMC Hospital - Kharghar | Dr. Pramod Damle",
+  "description": "VAMC Hospital in Kharghar, Navi Mumbai with Dr. Pramod Damle. Value Added Medical Care, patient-first consultations, and convenient appointment booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
