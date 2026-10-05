@@ -173,22 +173,22 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
   };
 
   return (
-    <section id="appointment" className="py-20 sm:py-24 bg-[#FFFFFF] border-t border-[#DDE4E6] scroll-mt-10">
+    <section id="appointment" className="py-20 sm:py-24 bg-[#FFFFFF] dark:bg-[#0E161B] border-t border-[#DDE4E6] dark:border-[#263842] scroll-mt-10 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center">
           <div className="flex justify-center mb-3">
             <VAMCLogo className="w-10 h-11 drop-shadow-2xs" />
           </div>
-          <div className="flex items-center justify-center gap-2 text-xs font-bold text-[#115572] tracking-wider uppercase mb-2">
+          <div className="flex items-center justify-center gap-2 text-xs font-bold text-[#115572] dark:text-[#2A88B0] tracking-wider uppercase mb-2">
             <span className="w-2 h-2 rounded-full bg-[#EF3236]" />
             <span>Consultation Scheduling</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#20282C]">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#20282C] dark:text-[#EDF3F5]">
             Request an Appointment at {CLIENT_CONTENT.hospital.fullName}
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-[#68757A]">
-            Value Added Medical Care consultations with <strong className="text-[#20282C]">{CLIENT_CONTENT.doctor.name}</strong> in Kharghar. 
+          <p className="mt-3 text-sm sm:text-base text-[#68757A] dark:text-[#96A5AB]">
+            Value Added Medical Care consultations with <strong className="text-[#20282C] dark:text-[#EDF3F5]">{CLIENT_CONTENT.doctor.name}</strong> in Kharghar. 
             Select your preferred consultation window below.
           </p>
         </div>
@@ -197,14 +197,14 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
           <FadeIn delay={0.05}>
             {/* 1. Phone Only Mode */}
             {channelMode === 'phone' && (
-              <div className="bg-[#F7F8F8] rounded-2xl p-7 sm:p-9 border border-[#DDE4E6] shadow-2xs text-center">
-                <div className="w-12 h-12 rounded-full bg-[#FFFFFF] border border-[#DDE4E6] text-[#115572] flex items-center justify-center mx-auto mb-4">
+              <div className="bg-[#F7F8F8] dark:bg-[#18252C] rounded-2xl p-7 sm:p-9 border border-[#DDE4E6] dark:border-[#263842] shadow-2xs text-center">
+                <div className="w-12 h-12 rounded-full bg-[#FFFFFF] dark:bg-[#131E24] border border-[#DDE4E6] dark:border-[#263842] text-[#115572] dark:text-[#2A88B0] flex items-center justify-center mx-auto mb-4">
                   <Phone className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-semibold text-[#20282C] mb-2">
+                <h3 className="text-lg font-semibold text-[#20282C] dark:text-[#EDF3F5] mb-2">
                   Telephone Appointment Scheduling
                 </h3>
-                <p className="text-xs sm:text-sm text-[#68757A] leading-relaxed max-w-md mx-auto mb-6">
+                <p className="text-xs sm:text-sm text-[#68757A] dark:text-[#96A5AB] leading-relaxed max-w-md mx-auto mb-6">
                   Please call the clinic reception to inquire about current consultation token availability and coordinate your visit with {CLIENT_CONTENT.doctor.name}.
                 </p>
                 {CLIENT_CONTENT.contact.phone && (
@@ -221,17 +221,17 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
 
             {/* 2. Unavailable Mode */}
             {channelMode === 'unavailable' && (
-              <div className="bg-[#F7F8F8] rounded-2xl p-7 sm:p-9 border border-[#DDE4E6] shadow-2xs text-center">
-                <div className="w-12 h-12 rounded-full bg-[#FFFFFF] border border-[#DDE4E6] text-[#115572] flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-6 h-6 text-[#115572]" />
+              <div className="bg-[#F7F8F8] dark:bg-[#18252C] rounded-2xl p-7 sm:p-9 border border-[#DDE4E6] dark:border-[#263842] shadow-2xs text-center">
+                <div className="w-12 h-12 rounded-full bg-[#FFFFFF] dark:bg-[#131E24] border border-[#DDE4E6] dark:border-[#263842] text-[#115572] dark:text-[#2A88B0] flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="w-6 h-6 text-[#115572] dark:text-[#2A88B0]" />
                 </div>
-                <h3 className="text-lg font-semibold text-[#20282C] mb-2">
+                <h3 className="text-lg font-semibold text-[#20282C] dark:text-[#EDF3F5] mb-2">
                   In-Person Consultations at {CLIENT_CONTENT.hospital.fullName}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#68757A] leading-relaxed max-w-md mx-auto mb-5">
+                <p className="text-xs sm:text-sm text-[#68757A] dark:text-[#96A5AB] leading-relaxed max-w-md mx-auto mb-5">
                   Patients are warmly welcome to visit our clinic directly during outpatient OPD hours in Kharghar, Navi Mumbai.
                 </p>
-                <div className="p-3.5 bg-[#FFFFFF] border border-[#DDE4E6] rounded-xl text-xs text-[#20282C] max-w-md mx-auto">
+                <div className="p-3.5 bg-[#FFFFFF] dark:bg-[#131E24] border border-[#DDE4E6] dark:border-[#263842] rounded-xl text-xs text-[#20282C] dark:text-[#EDF3F5] max-w-md mx-auto">
                   <span className="font-semibold">{CLIENT_CONTENT.location.displayAddress}</span>
                 </div>
                 <div className="mt-5">
@@ -239,7 +239,7 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
                     href={CLIENT_CONTENT.location.directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#115572] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#115572] dark:text-[#2A88B0] hover:underline"
                   >
                     <span>Get Directions on Google Maps</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -250,25 +250,25 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
 
             {/* 3. Real Backend Confirmed State */}
             {channelMode === 'backend' && backendSuccess && (
-              <div className="bg-[#F7F8F8] rounded-2xl p-7 sm:p-9 border border-[#115572]/40 shadow-2xs">
-                <div className="flex items-center gap-3 text-[#115572] mb-4">
-                  <CheckCircle2 className="w-8 h-8 text-[#115572] shrink-0" />
+              <div className="bg-[#F7F8F8] dark:bg-[#18252C] rounded-2xl p-7 sm:p-9 border border-[#115572]/40 dark:border-[#2A88B0]/40 shadow-2xs">
+                <div className="flex items-center gap-3 text-[#115572] dark:text-[#2A88B0] mb-4">
+                  <CheckCircle2 className="w-8 h-8 shrink-0" />
                   <div>
-                    <h3 className="text-lg font-semibold text-[#20282C]">
+                    <h3 className="text-lg font-semibold text-[#20282C] dark:text-[#EDF3F5]">
                       Appointment Request Transmitted
                     </h3>
-                    <p className="text-xs text-[#68757A]">
+                    <p className="text-xs text-[#68757A] dark:text-[#96A5AB]">
                       Received by {CLIENT_CONTENT.hospital.fullName} clinic desk.
                     </p>
                   </div>
                 </div>
-                <p className="text-xs sm:text-sm text-[#68757A] mb-5">
+                <p className="text-xs sm:text-sm text-[#68757A] dark:text-[#96A5AB] mb-5">
                   Our reception team will review your requested time with {CLIENT_CONTENT.doctor.name} and contact you at {formData.contactNumber} to coordinate your consultation.
                 </p>
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="py-2.5 px-4 text-xs font-medium text-[#20282C] bg-[#FFFFFF] border border-[#DDE4E6] rounded-lg hover:bg-[#F7F8F8]"
+                  className="py-2.5 px-4 text-xs font-medium text-[#20282C] dark:text-[#EDF3F5] bg-[#FFFFFF] dark:bg-[#131E24] border border-[#DDE4E6] dark:border-[#263842] rounded-lg hover:bg-[#F7F8F8] dark:hover:bg-[#1E2E37]"
                 >
                   Submit Another Request
                 </button>
@@ -277,59 +277,59 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
 
             {/* 4. WhatsApp or Email Prepared State */}
             {preparedAction && (
-              <div className="bg-[#F7F8F8] rounded-2xl p-7 sm:p-9 border border-[#DDE4E6] shadow-2xs space-y-5 animate-in fade-in duration-200">
+              <div className="bg-[#F7F8F8] dark:bg-[#18252C] rounded-2xl p-7 sm:p-9 border border-[#DDE4E6] dark:border-[#263842] shadow-2xs space-y-5 animate-in fade-in duration-200">
                 <div className="flex items-start gap-3.5">
                   {preparedAction.type === 'whatsapp' ? (
-                    <div className="w-10 h-10 rounded-xl bg-[#115572]/10 border border-[#115572]/30 text-[#115572] flex items-center justify-center shrink-0">
-                      <MessageSquare className="w-5 h-5 text-[#115572]" />
+                    <div className="w-10 h-10 rounded-xl bg-[#115572]/10 dark:bg-[#2A88B0]/20 border border-[#115572]/30 dark:border-[#2A88B0]/40 text-[#115572] dark:text-[#2A88B0] flex items-center justify-center shrink-0">
+                      <MessageSquare className="w-5 h-5" />
                     </div>
                   ) : (
-                    <div className="w-10 h-10 rounded-xl bg-[#115572]/10 border border-[#115572]/30 text-[#115572] flex items-center justify-center shrink-0">
-                      <Mail className="w-5 h-5 text-[#115572]" />
+                    <div className="w-10 h-10 rounded-xl bg-[#115572]/10 dark:bg-[#2A88B0]/20 border border-[#115572]/30 dark:border-[#2A88B0]/40 text-[#115572] dark:text-[#2A88B0] flex items-center justify-center shrink-0">
+                      <Mail className="w-5 h-5" />
                     </div>
                   )}
                   <div>
-                    <h3 className="text-lg font-semibold text-[#20282C]">
+                    <h3 className="text-lg font-semibold text-[#20282C] dark:text-[#EDF3F5]">
                       {preparedAction.type === 'whatsapp'
                         ? 'Ready to Dispatch via WhatsApp'
                         : 'Ready to Dispatch via Email'}
                     </h3>
-                    <p className="text-xs text-[#68757A] mt-0.5">
+                    <p className="text-xs text-[#68757A] dark:text-[#96A5AB] mt-0.5">
                       Review your appointment details below before opening your application.
                     </p>
                   </div>
                 </div>
 
                 {/* Summary Table */}
-                <div className="p-4 rounded-xl bg-[#FFFFFF] border border-[#DDE4E6] space-y-2 text-xs text-[#20282C]">
-                  <div className="flex justify-between py-1 border-b border-[#DDE4E6]">
-                    <span className="text-[#68757A]">Patient Name:</span>
-                    <span className="font-semibold text-[#20282C]">{preparedAction.payload.patientName}</span>
+                <div className="p-4 rounded-xl bg-[#FFFFFF] dark:bg-[#131E24] border border-[#DDE4E6] dark:border-[#263842] space-y-2 text-xs text-[#20282C] dark:text-[#EDF3F5]">
+                  <div className="flex justify-between py-1 border-b border-[#DDE4E6] dark:border-[#263842]">
+                    <span className="text-[#68757A] dark:text-[#96A5AB]">Patient Name:</span>
+                    <span className="font-semibold text-[#20282C] dark:text-[#EDF3F5]">{preparedAction.payload.patientName}</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-[#DDE4E6]">
-                    <span className="text-[#68757A]">Contact Mobile:</span>
-                    <span className="font-semibold text-[#20282C]">{preparedAction.payload.contactNumber}</span>
+                  <div className="flex justify-between py-1 border-b border-[#DDE4E6] dark:border-[#263842]">
+                    <span className="text-[#68757A] dark:text-[#96A5AB]">Contact Mobile:</span>
+                    <span className="font-semibold text-[#20282C] dark:text-[#EDF3F5]">{preparedAction.payload.contactNumber}</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-[#DDE4E6]">
-                    <span className="text-[#68757A]">Preferred Date:</span>
-                    <span className="font-semibold text-[#20282C]">{preparedAction.payload.preferredDate}</span>
+                  <div className="flex justify-between py-1 border-b border-[#DDE4E6] dark:border-[#263842]">
+                    <span className="text-[#68757A] dark:text-[#96A5AB]">Preferred Date:</span>
+                    <span className="font-semibold text-[#20282C] dark:text-[#EDF3F5]">{preparedAction.payload.preferredDate}</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-[#DDE4E6]">
-                    <span className="text-[#68757A]">Time Window:</span>
-                    <span className="font-semibold text-[#20282C]">{preparedAction.payload.preferredTimeSlot}</span>
+                  <div className="flex justify-between py-1 border-b border-[#DDE4E6] dark:border-[#263842]">
+                    <span className="text-[#68757A] dark:text-[#96A5AB]">Time Window:</span>
+                    <span className="font-semibold text-[#20282C] dark:text-[#EDF3F5]">{preparedAction.payload.preferredTimeSlot}</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-[#DDE4E6]">
-                    <span className="text-[#68757A]">Consultation Area:</span>
-                    <span className="font-semibold text-[#20282C]">{preparedAction.payload.serviceInterest}</span>
+                  <div className="flex justify-between py-1 border-b border-[#DDE4E6] dark:border-[#263842]">
+                    <span className="text-[#68757A] dark:text-[#96A5AB]">Consultation Area:</span>
+                    <span className="font-semibold text-[#20282C] dark:text-[#EDF3F5]">{preparedAction.payload.serviceInterest}</span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-[#68757A]">Doctor:</span>
-                    <span className="font-semibold text-[#115572]">{CLIENT_CONTENT.doctor.name}</span>
+                    <span className="text-[#68757A] dark:text-[#96A5AB]">Doctor:</span>
+                    <span className="font-semibold text-[#115572] dark:text-[#2A88B0]">{CLIENT_CONTENT.doctor.name}</span>
                   </div>
                 </div>
 
                 {/* Patient Instructions */}
-                <p className="text-xs text-[#68757A] leading-relaxed">
+                <p className="text-xs text-[#68757A] dark:text-[#96A5AB] leading-relaxed">
                   {preparedAction.type === 'whatsapp' ? (
                     <>
                       Clicking below will launch WhatsApp with your appointment request pre-filled. 
@@ -367,12 +367,12 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
                   <button
                     type="button"
                     onClick={handleReset}
-                    className="inline-flex items-center justify-center py-3 px-4 text-xs font-medium text-[#20282C] bg-[#FFFFFF] border border-[#DDE4E6] rounded-lg hover:bg-[#F7F8F8] transition-colors"
+                    className="inline-flex items-center justify-center py-3 px-4 text-xs font-medium text-[#20282C] dark:text-[#EDF3F5] bg-[#FFFFFF] dark:bg-[#131E24] border border-[#DDE4E6] dark:border-[#263842] rounded-lg hover:bg-[#F7F8F8] dark:hover:bg-[#1E2E37] transition-colors"
                   >
                     Edit Details
                   </button>
                 </div>
-                <div className="text-[11px] text-[#68757A]">
+                <div className="text-[11px] text-[#68757A] dark:text-[#96A5AB]">
                   Note: A slot is coordinated after our clinic desk reviews the request with the consulting physician.
                 </div>
               </div>
@@ -385,7 +385,7 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
                 <form
                   onSubmit={handleFormSubmit}
                   noValidate
-                  className="bg-[#F7F8F8] rounded-2xl p-7 sm:p-9 border border-[#DDE4E6] shadow-2xs space-y-5"
+                  className="bg-[#F7F8F8] dark:bg-[#18252C] rounded-2xl p-7 sm:p-9 border border-[#DDE4E6] dark:border-[#263842] shadow-2xs space-y-5"
                 >
                   {backendError && (
                     <div className="p-3.5 rounded-lg bg-[#EF3236]/10 border border-[#EF3236]/30 text-xs text-[#EF3236] flex items-center gap-2">
@@ -396,7 +396,7 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
 
                   {/* Patient Name */}
                   <div>
-                    <label htmlFor="patient-name" className="block text-xs font-semibold text-[#20282C] mb-1.5">
+                    <label htmlFor="patient-name" className="block text-xs font-semibold text-[#20282C] dark:text-[#EDF3F5] mb-1.5">
                       Patient Full Name <span className="text-[#EF3236]">*</span>
                     </label>
                     <div className="relative">
@@ -410,13 +410,13 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
                           if (errors.patientName) setErrors({ ...errors, patientName: undefined });
                         }}
                         placeholder="e.g. Anand Sharma"
-                        className={`w-full px-4 py-3 text-sm text-[#20282C] bg-[#FFFFFF] border rounded-lg focus:outline-hidden transition-colors ${
+                        className={`w-full px-4 py-3 text-sm text-[#20282C] dark:text-[#EDF3F5] bg-[#FFFFFF] dark:bg-[#111A20] border rounded-lg focus:outline-hidden transition-colors ${
                           errors.patientName
                             ? 'border-[#EF3236] focus:border-[#EF3236]'
-                            : 'border-[#DDE4E6] focus:border-[#115572]'
+                            : 'border-[#DDE4E6] dark:border-[#263842] focus:border-[#115572] dark:focus:border-[#2A88B0]'
                         }`}
                       />
-                      <User className="w-4 h-4 text-[#68757A] absolute right-3.5 top-3.5" />
+                      <User className="w-4 h-4 text-[#68757A] dark:text-[#96A5AB] absolute right-3.5 top-3.5" />
                     </div>
                     {errors.patientName && (
                       <p className="mt-1 text-xs text-[#EF3236] flex items-center gap-1">
@@ -427,7 +427,7 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
 
                   {/* Contact Number */}
                   <div>
-                    <label htmlFor="patient-phone" className="block text-xs font-semibold text-[#20282C] mb-1.5">
+                    <label htmlFor="patient-phone" className="block text-xs font-semibold text-[#20282C] dark:text-[#EDF3F5] mb-1.5">
                       Contact Mobile Number <span className="text-[#EF3236]">*</span>
                     </label>
                     <div className="relative">
@@ -441,13 +441,13 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
                           if (errors.contactNumber) setErrors({ ...errors, contactNumber: undefined });
                         }}
                         placeholder="e.g. 98200XXXXX"
-                        className={`w-full px-4 py-3 text-sm text-[#20282C] bg-[#FFFFFF] border rounded-lg focus:outline-hidden transition-colors ${
+                        className={`w-full px-4 py-3 text-sm text-[#20282C] dark:text-[#EDF3F5] bg-[#FFFFFF] dark:bg-[#111A20] border rounded-lg focus:outline-hidden transition-colors ${
                           errors.contactNumber
                             ? 'border-[#EF3236] focus:border-[#EF3236]'
-                            : 'border-[#DDE4E6] focus:border-[#115572]'
+                            : 'border-[#DDE4E6] dark:border-[#263842] focus:border-[#115572] dark:focus:border-[#2A88B0]'
                         }`}
                       />
-                      <Phone className="w-4 h-4 text-[#68757A] absolute right-3.5 top-3.5" />
+                      <Phone className="w-4 h-4 text-[#68757A] dark:text-[#96A5AB] absolute right-3.5 top-3.5" />
                     </div>
                     {errors.contactNumber && (
                       <p className="mt-1 text-xs text-[#EF3236] flex items-center gap-1">
@@ -459,7 +459,7 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
                   {/* Date & Slot */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="preferred-date" className="block text-xs font-semibold text-[#20282C] mb-1.5">
+                      <label htmlFor="preferred-date" className="block text-xs font-semibold text-[#20282C] dark:text-[#EDF3F5] mb-1.5">
                         Preferred Date <span className="text-[#EF3236]">*</span>
                       </label>
                       <input
@@ -472,10 +472,10 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
                           setFormData({ ...formData, preferredDate: e.target.value });
                           if (errors.preferredDate) setErrors({ ...errors, preferredDate: undefined });
                         }}
-                        className={`w-full px-4 py-3 text-sm text-[#20282C] bg-[#FFFFFF] border rounded-lg focus:outline-hidden transition-colors ${
+                        className={`w-full px-4 py-3 text-sm text-[#20282C] dark:text-[#EDF3F5] bg-[#FFFFFF] dark:bg-[#111A20] border rounded-lg focus:outline-hidden transition-colors ${
                           errors.preferredDate
                             ? 'border-[#EF3236] focus:border-[#EF3236]'
-                            : 'border-[#DDE4E6] focus:border-[#115572]'
+                            : 'border-[#DDE4E6] dark:border-[#263842] focus:border-[#115572] dark:focus:border-[#2A88B0]'
                         }`}
                       />
                       {errors.preferredDate && (
@@ -485,14 +485,14 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
                       )}
                     </div>
                     <div>
-                      <label htmlFor="preferred-slot" className="block text-xs font-semibold text-[#20282C] mb-1.5">
+                      <label htmlFor="preferred-slot" className="block text-xs font-semibold text-[#20282C] dark:text-[#EDF3F5] mb-1.5">
                         OPD Time Window <span className="text-[#EF3236]">*</span>
                       </label>
                       <select
                         id="preferred-slot"
                         value={formData.preferredTimeSlot}
                         onChange={(e) => setFormData({ ...formData, preferredTimeSlot: e.target.value })}
-                        className="w-full px-4 py-3 text-sm text-[#20282C] bg-[#FFFFFF] border border-[#DDE4E6] rounded-lg focus:outline-hidden focus:border-[#115572] transition-colors"
+                        className="w-full px-4 py-3 text-sm text-[#20282C] dark:text-[#EDF3F5] bg-[#FFFFFF] dark:bg-[#111A20] border border-[#DDE4E6] dark:border-[#263842] rounded-lg focus:outline-hidden focus:border-[#115572] dark:focus:border-[#2A88B0] transition-colors"
                       >
                         <option value="Morning (10:00 AM – 1:30 PM)">Morning (10:00 AM – 1:30 PM)</option>
                         <option value="Evening (5:30 PM – 8:30 PM)">Evening (5:30 PM – 8:30 PM)</option>
@@ -502,14 +502,14 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
 
                   {/* Consultation Service */}
                   <div>
-                    <label htmlFor="service-interest" className="block text-xs font-semibold text-[#20282C] mb-1.5">
+                    <label htmlFor="service-interest" className="block text-xs font-semibold text-[#20282C] dark:text-[#EDF3F5] mb-1.5">
                       Consultation / Care Interest
                     </label>
                     <select
                       id="service-interest"
                       value={formData.serviceInterest}
                       onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
-                      className="w-full px-4 py-3 text-sm text-[#20282C] bg-[#FFFFFF] border border-[#DDE4E6] rounded-lg focus:outline-hidden focus:border-[#115572] transition-colors"
+                      className="w-full px-4 py-3 text-sm text-[#20282C] dark:text-[#EDF3F5] bg-[#FFFFFF] dark:bg-[#111A20] border border-[#DDE4E6] dark:border-[#263842] rounded-lg focus:outline-hidden focus:border-[#115572] dark:focus:border-[#2A88B0] transition-colors"
                     >
                       {CLIENT_CONTENT.services.map((s) => (
                         <option key={s.id} value={s.name}>
@@ -522,8 +522,8 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
 
                   {/* Optional Note */}
                   <div>
-                    <label htmlFor="brief-note" className="block text-xs font-semibold text-[#20282C] mb-1.5">
-                      Brief Note <span className="text-[#68757A] font-normal">(Optional)</span>
+                    <label htmlFor="brief-note" className="block text-xs font-semibold text-[#20282C] dark:text-[#EDF3F5] mb-1.5">
+                      Brief Note <span className="text-[#68757A] dark:text-[#96A5AB] font-normal">(Optional)</span>
                     </label>
                     <textarea
                       id="brief-note"
@@ -532,9 +532,9 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
                       value={formData.briefNote}
                       onChange={(e) => setFormData({ ...formData, briefNote: e.target.value })}
                       placeholder="e.g., Routine checkup, ongoing follow-up, or report consultation"
-                      className="w-full px-4 py-2.5 text-sm text-[#20282C] bg-[#FFFFFF] border border-[#DDE4E6] rounded-lg focus:outline-hidden focus:border-[#115572] transition-colors resize-none"
+                      className="w-full px-4 py-2.5 text-sm text-[#20282C] dark:text-[#EDF3F5] bg-[#FFFFFF] dark:bg-[#111A20] border border-[#DDE4E6] dark:border-[#263842] rounded-lg focus:outline-hidden focus:border-[#115572] dark:focus:border-[#2A88B0] transition-colors resize-none"
                     />
-                    <span className="text-[11px] text-[#68757A]">
+                    <span className="text-[11px] text-[#68757A] dark:text-[#96A5AB]">
                       Do not include sensitive personal medical history.
                     </span>
                   </div>
@@ -570,7 +570,7 @@ export const AppointmentSection: React.FC<AppointmentSectionProps> = ({
                     </MotionButton>
                   </div>
 
-                  <div className="text-[11px] text-[#68757A] text-center pt-2">
+                  <div className="text-[11px] text-[#68757A] dark:text-[#96A5AB] text-center pt-2">
                     Consultations are conducted at {CLIENT_CONTENT.hospital.fullName}, Kharghar. For acute medical emergencies, please visit an emergency casualty department immediately.
                   </div>
                 </form>

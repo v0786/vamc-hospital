@@ -39,18 +39,18 @@ export const PatientFaq: React.FC = () => {
   };
 
   return (
-    <section className="py-20 sm:py-24 bg-[#FFFFFF] border-t border-[#DDE4E6]">
+    <section className="py-20 sm:py-24 bg-[#FFFFFF] dark:bg-[#0E161B] border-t border-[#DDE4E6] dark:border-[#263842] transition-colors duration-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn delay={0}>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="flex items-center justify-center gap-2 text-xs font-bold text-[#115572] tracking-wider uppercase mb-2">
+            <div className="flex items-center justify-center gap-2 text-xs font-bold text-[#115572] dark:text-[#2A88B0] tracking-wider uppercase mb-2">
               <span className="w-2 h-2 rounded-full bg-[#EF3236]" />
               <span>Patient Information</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#20282C]">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#20282C] dark:text-[#EDF3F5]">
               Frequently Asked Patient Questions
             </h2>
-            <p className="mt-3 text-sm text-[#68757A]">
+            <p className="mt-3 text-sm text-[#68757A] dark:text-[#96A5AB]">
               Essential guidance regarding visits, timings, and consultations at {CLIENT_CONTENT.hospital.fullName}, Kharghar.
             </p>
           </div>
@@ -62,27 +62,27 @@ export const PatientFaq: React.FC = () => {
             return (
               <FadeIn key={idx} delay={idx * 0.05}>
                 <div
-                  className="bg-[#F7F8F8] rounded-xl border border-[#DDE4E6] overflow-hidden transition-all shadow-2xs hover:border-[#115572]"
+                  className="bg-[#F7F8F8] dark:bg-[#18252C] rounded-xl border border-[#DDE4E6] dark:border-[#263842] overflow-hidden transition-all shadow-2xs hover:border-[#115572] dark:hover:border-[#2A88B0]"
                 >
                   <button
                     type="button"
                     onClick={() => toggle(idx)}
-                    className="w-full flex items-center justify-between p-5 text-left text-sm sm:text-base font-semibold text-[#20282C] hover:text-[#115572] transition-colors focus:outline-hidden focus-visible:bg-[#FFFFFF] cursor-pointer"
+                    className="w-full flex items-center justify-between p-5 text-left text-sm sm:text-base font-semibold text-[#20282C] dark:text-[#EDF3F5] hover:text-[#115572] dark:hover:text-[#2A88B0] transition-colors focus:outline-hidden focus-visible:bg-[#FFFFFF] dark:focus-visible:bg-[#131E24] cursor-pointer"
                     aria-expanded={isOpen}
                   >
                     <span className="flex items-center gap-3">
-                      <HelpCircle className="w-4 h-4 text-[#115572] shrink-0" />
+                      <HelpCircle className="w-4 h-4 text-[#115572] dark:text-[#2A88B0] shrink-0" />
                       <span>{faq.q}</span>
                     </span>
                     <ChevronDown
-                      className={`w-4 h-4 text-[#68757A] transition-transform duration-200 shrink-0 ml-2 ${
-                        isOpen ? 'rotate-180 text-[#115572]' : ''
+                      className={`w-4 h-4 text-[#68757A] dark:text-[#96A5AB] transition-transform duration-200 shrink-0 ml-2 ${
+                        isOpen ? 'rotate-180 text-[#115572] dark:text-[#2A88B0]' : ''
                       }`}
                     />
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#68757A] leading-relaxed border-t border-[#DDE4E6] bg-[#FFFFFF] animate-in fade-in duration-150">
+                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#68757A] dark:text-[#96A5AB] leading-relaxed border-t border-[#DDE4E6] dark:border-[#263842] bg-[#FFFFFF] dark:bg-[#131E24] animate-in fade-in duration-150">
                       <p>{faq.a}</p>
                     </div>
                   )}

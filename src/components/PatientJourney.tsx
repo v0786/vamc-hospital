@@ -8,46 +8,46 @@ export const PatientJourney: React.FC = () => {
   const icons = [CalendarCheck, PhoneCall, Stethoscope, HeartPulse];
 
   return (
-    <section id="journey" className="py-20 sm:py-24 bg-[#F7F8F8] border-t border-[#DDE4E6]">
+    <section id="journey" className="py-20 sm:py-24 bg-[#F7F8F8] dark:bg-[#131E24] border-t border-[#DDE4E6] dark:border-[#263842] transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl">
-          <div className="flex items-center gap-2 text-xs font-bold text-[#115572] tracking-wider uppercase mb-2">
+          <div className="flex items-center gap-2 text-xs font-bold text-[#115572] dark:text-[#2A88B0] tracking-wider uppercase mb-2">
             <span className="w-2 h-2 rounded-full bg-[#EF3236]" />
             <span>Patient Experience</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#20282C]">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#20282C] dark:text-[#EDF3F5]">
             Your Consultation Process at {CLIENT_CONTENT.hospital.fullName}
           </h2>
-          <p className="mt-3 text-base text-[#68757A]">
+          <p className="mt-3 text-base text-[#68757A] dark:text-[#96A5AB]">
             A clear, structured pathway designed to make scheduling and visiting our Kharghar facility straightforward, dignified, and reassuring.
           </p>
         </div>
 
-        {/* 4 Steps Timeline in Clean White / Teal */}
+        {/* 4 Steps Timeline */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, idx) => {
             const Icon = icons[idx % icons.length];
             return (
               <FadeIn key={idx} delay={idx * 0.07}>
-                <div className="relative p-6 rounded-2xl bg-[#FFFFFF] border border-[#DDE4E6] hover:border-[#115572] transition-colors flex flex-col justify-between h-full shadow-2xs">
+                <div className="relative p-6 rounded-2xl bg-[#FFFFFF] dark:bg-[#18252C] border border-[#DDE4E6] dark:border-[#263842] hover:border-[#115572] dark:hover:border-[#2A88B0] transition-colors flex flex-col justify-between h-full shadow-2xs">
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-2xl font-mono font-bold text-[#115572] tabular-nums">
+                      <span className="text-2xl font-mono font-bold text-[#115572] dark:text-[#2A88B0] tabular-nums">
                         {step.stepNumber}
                       </span>
-                      <div className="w-9 h-9 rounded-lg bg-[#F7F8F8] border border-[#DDE4E6] text-[#115572] flex items-center justify-center">
+                      <div className="w-9 h-9 rounded-lg bg-[#F7F8F8] dark:bg-[#131E24] border border-[#DDE4E6] dark:border-[#263842] text-[#115572] dark:text-[#2A88B0] flex items-center justify-center">
                         <Icon className="w-4 h-4" />
                       </div>
                     </div>
-                    <h3 className="text-base font-semibold text-[#20282C] mb-2">
+                    <h3 className="text-base font-semibold text-[#20282C] dark:text-[#EDF3F5] mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#68757A] leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#68757A] dark:text-[#96A5AB] leading-relaxed">
                       {step.description}
                     </p>
                   </div>
-                  <div className="mt-6 pt-3 border-t border-[#DDE4E6] text-[11px] text-[#68757A] font-mono">
+                  <div className="mt-6 pt-3 border-t border-[#DDE4E6] dark:border-[#263842] text-[11px] text-[#68757A] dark:text-[#96A5AB] font-mono">
                     Step {step.stepNumber} of 04
                   </div>
                 </div>
@@ -56,8 +56,8 @@ export const PatientJourney: React.FC = () => {
           })}
         </div>
 
-        {/* Preparation Checklist: Elegant Deep VAMC Teal Container (#115572) with White & Red Accents */}
-        <div className="mt-14 p-7 sm:p-9 rounded-2xl bg-[#115572] text-[#FFFFFF] shadow-md border border-[#0B3A4F]">
+        {/* Preparation Checklist */}
+        <div className="mt-14 p-7 sm:p-9 rounded-2xl bg-[#115572] dark:bg-[#0C2433] text-[#FFFFFF] shadow-md border border-[#0B3A4F] dark:border-[#18445A]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-4">
               <div className="flex items-center gap-2 text-xs font-bold text-[#EF3236] bg-[#FFFFFF] px-2.5 py-1 rounded-md w-fit uppercase tracking-wider mb-3">
@@ -73,7 +73,7 @@ export const PatientJourney: React.FC = () => {
             </div>
             <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
               {CLIENT_CONTENT.patientChecklist.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-3.5 rounded-xl bg-[#0B3A4F]/60 border border-[#FFFFFF]/15 text-xs sm:text-sm text-[#FFFFFF]">
+                <div key={idx} className="flex items-start gap-3 p-3.5 rounded-xl bg-[#0B3A4F]/60 dark:bg-[#071923]/70 border border-[#FFFFFF]/15 text-xs sm:text-sm text-[#FFFFFF]">
                   <CheckCircle2 className="w-4 h-4 text-[#EF3236] shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </div>

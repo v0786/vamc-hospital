@@ -1,4 +1,5 @@
 import React from 'react';
+import logoSvg from '../assets/vamc_hospital_logo.svg';
 
 interface VAMCLogoProps {
   className?: string;
@@ -11,14 +12,14 @@ interface VAMCLogoProps {
 export const VAMCLogo: React.FC<VAMCLogoProps> = ({
   className = 'w-10 h-11',
   showText = false,
-  textColor = 'text-[#20282C]',
-  subtextColor = 'text-[#68757A]',
+  textColor = 'text-[#20282C] dark:text-[#EDF3F5]',
+  subtextColor = 'text-[#68757A] dark:text-[#96A5AB]',
 }) => {
   return (
     <div className="inline-flex items-center gap-2.5">
       <div className={`relative shrink-0 ${className}`}>
         <img
-          src="/vamc_hospital_logo.svg"
+          src={logoSvg}
           alt="VAMC Hospital Logo - Value Added Medical Care"
           className="w-full h-full object-contain"
           loading="eager"

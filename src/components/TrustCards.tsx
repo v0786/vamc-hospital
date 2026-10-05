@@ -46,27 +46,27 @@ export const TrustCards: React.FC<TrustCardsProps> = ({ onOpenAppointment }) => 
   ];
 
   return (
-    <section className="py-10 bg-[#FFFFFF] border-b border-[#DDE4E6]">
+    <section className="py-10 bg-[#FFFFFF] dark:bg-[#0E161B] border-b border-[#DDE4E6] dark:border-[#263842] transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {cards.map((card, idx) => {
             const Icon = card.icon;
             return (
               <FadeIn key={idx} delay={idx * 0.05}>
-                <div className="bg-[#F7F8F8] p-6 rounded-xl border border-[#DDE4E6] hover:border-[#115572] hover:bg-[#FFFFFF] transition-all flex flex-col justify-between h-full group">
+                <div className="bg-[#F7F8F8] dark:bg-[#18252C] p-6 rounded-xl border border-[#DDE4E6] dark:border-[#263842] hover:border-[#115572] dark:hover:border-[#2A88B0] hover:bg-[#FFFFFF] dark:hover:bg-[#1E2E37] transition-all flex flex-col justify-between h-full group">
                   <div>
-                    <div className="flex items-center gap-2 text-xs text-[#68757A] mb-2.5">
-                      <Icon className="w-4 h-4 text-[#115572]" />
-                      <span className="font-semibold tracking-wider uppercase text-[11px] text-[#115572]">{card.label}</span>
+                    <div className="flex items-center gap-2 text-xs text-[#68757A] dark:text-[#96A5AB] mb-2.5">
+                      <Icon className="w-4 h-4 text-[#115572] dark:text-[#2A88B0]" />
+                      <span className="font-semibold tracking-wider uppercase text-[11px] text-[#115572] dark:text-[#2A88B0]">{card.label}</span>
                     </div>
-                    <h3 className="text-base font-semibold text-[#20282C] leading-snug group-hover:text-[#115572] transition-colors">
+                    <h3 className="text-base font-semibold text-[#20282C] dark:text-[#EDF3F5] leading-snug group-hover:text-[#115572] dark:group-hover:text-[#2A88B0] transition-colors">
                       {card.title}
                     </h3>
-                    <p className="mt-2 text-xs text-[#68757A] leading-relaxed">
+                    <p className="mt-2 text-xs text-[#68757A] dark:text-[#96A5AB] leading-relaxed">
                       {card.detail}
                     </p>
                   </div>
-                  <div className="mt-5 pt-3.5 border-t border-[#DDE4E6] flex items-center justify-between text-xs">
+                  <div className="mt-5 pt-3.5 border-t border-[#DDE4E6] dark:border-[#263842] flex items-center justify-between text-xs">
                     {card.onClick ? (
                       <button
                         type="button"
@@ -78,13 +78,13 @@ export const TrustCards: React.FC<TrustCardsProps> = ({ onOpenAppointment }) => 
                     ) : (
                       <a
                         href={card.actionHref}
-                        className="font-semibold text-[#115572] hover:text-[#0B3A4F] inline-flex items-center gap-1 focus:outline-hidden focus-visible:underline"
+                        className="font-semibold text-[#115572] dark:text-[#2A88B0] hover:text-[#0B3A4F] dark:hover:text-[#44A6D1] inline-flex items-center gap-1 focus:outline-hidden focus-visible:underline"
                       >
                         {card.actionText} →
                       </a>
                     )}
-                    <span className="text-[11px] text-[#68757A] font-medium flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#115572]" />
+                    <span className="text-[11px] text-[#68757A] dark:text-[#96A5AB] font-medium flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#115572] dark:bg-[#2A88B0]" />
                       Verified
                     </span>
                   </div>
